@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Directorio{% endblock %}
+
+{% block content %}
+    <main>
+        <h2>Listado de Profesionales</h2>
+        <ul>
+            {% for item in values %}
+
+            <li>
+                <h3>Profesional: {{item.name}}</h3>
+                <p>Servicio: {{item.profesion}}</p>
+                <p>Contacto: {{item.email}}</p>
+            </li>
+            {% endfor %}
+
+            <!-- Agrega más profesionales según sea necesario -->
+        </ul>
+    </main>
+    
+{% endblock %}

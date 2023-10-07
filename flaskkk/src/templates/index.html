@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %}Dockerizate!{% endblock %}
+
+
+{% block content %}
+<div style="position: relative; width: 100%; padding-bottom: 56.25%;">
+
+
+        <iframe autoplay muted loop class="banner" 
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/Wa7MHaEIrp8?autoplay=1&mute=1&loop=1&controls=0&playlist=Wa7MHaEIrp8"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        <h2 class="yo">PIPELINE</h2>
+    </div>
+    <main>
+        <section>
+            <h2>Acerca de Nosotros</h2>
+            <p>Nuestra misión es bastante simple: queremos ser el enlace que te ayude a encontrar nuevas amistades, colaboradores o socios comerciales. No somos los más grandes ni los más famosos, pero trabajamos con el corazón para ofrecer un servicio personalizado y auténtico.</p>
+        </section>
+
+        <section>
+            <h2>Nuestros Servicios</h2>
+            <ul>
+                <li>Benchmarking</li>
+                <li>Networking</li>
+                <li>Alianzas</li>
+            </ul>
+        </section>
+    </main>
+    <section style="overflow: auto;height: 30vh;margin: 15vh;">
+<h1>Noticias</h1>
+    <ul id="newsList"></ul>
+</section>
+    <script>
+        const rssFeedUrl = 'https://www.ambito.com/rss/pages/negocios.xml'; // Reemplaza con la URL de tu feed RSS
+
+        // Función para cargar y mostrar noticias
+        async function loadNews() {
+            try {
+                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssFeedUrl)}`);
+                const data = await response.json();
+
+                if (data.status === 'ok') {
+                    const newsList = document.getElementById('newsList');
+
+                    data.items.forEach(item => {
+                        const listItem = document.createElement('li');
+                        const link = document.createElement('a');
+                        link.href = item.link;
+                        link.textContent = item.title;
+                        listItem.appendChild(link);
+                        newsList.appendChild(listItem);
+                    });
+                } else {
+                    console.error('No se pudo cargar el feed RSS.');
+                }
+            } catch (error) {
+                console.error('Error al cargar el feed RSS:', error);
+            }
+        }
+
+        // Cargar noticias al cargar la página
+        window.addEventListener('load', loadNews);
+    </script>
+
+{% endblock %}

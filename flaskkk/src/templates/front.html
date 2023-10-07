@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> 
+	<title>Portfolio</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+	 <link rel="manifest" href="manifest.json" />
+<!-- Soporte para iOS -->
+<link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+<link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+<meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+<meta name="theme-color" content="#db4938" />
+	<meta property="og:title" content=Portfolio>
+<meta property="og:site_name" content=Portada>
+<meta property="og:url" content=index.html>
+<meta property="og:description" content=Breve presentación y descripción personal y acerca de mi experiencia y formación en el ámbito web>
+<meta property="og:type" content=profile>
+<meta property="og:image" content=java>
+<meta property="og:image" content=python>
+<meta property="og:image" content=mysql>
+<meta property="og:image" content=ruby>
+
+</head>
+<body>
+	<main>
+	<nav>
+		<ul>
+          <li><i class="fa-regular fa-user"></i> Siendo yo</li>
+          <li><i class="fa-regular fa-bookmark"></i> Formación</li>
+          <li><i class="fa-regular fa-calendar-plus"></i> Proyectos</li>
+        </ul>
+	</nav>
+	<header>
+		<div class="banner">
+    <video autoplay muted loop>
+        <source src="ink.mp4" type="video/mp4">
+    </video>
+    <h2>Pedro Pasardi</h2>
+</div>
+		
+		<article><div><h4 class="quote">"El mundo le pertenece a los valientes"</h4></div></article>
+	</header>
+
+	<section class="header">
+		<article><div class="container"></div></article>
+
+		<article><div class="inputs">
+			<label>Conozcámonos</label><br><br>
+			<label>Cómo te llamás?</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label>Qué habilidad resulta de interés?</label>
+  <input type="text" id="habilidad" name="habilidad"><br><br>
+  <button onclick="submitinputs()" style="border: none;background: lightblue;padding: 1%;cursor: pointer;">Encantado de conocerte</button>
+</div></article>
+
+		
+	</section>
+	<section>
+		<div class="abajo">
+
+    <div onclick="getLocation()"><h2 class="clickk">Hacé click y mirá si estamos cerca!</h2></div>
+		 <div id="map"></div>
+
+  
+    <!-- 
+      The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises
+      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+    ></script>
+</div>
+	</section>
+
+	<footer>
+		<div class="elfooter">
+		<div class="izquierda"><h2>Pedro Pasardi</h2><h2>Desarrollador</h2></div>
+		<div class="derecha"><h4>Trabajos de front-end y bases de datos. Infraestructura cloud. Estadística fundada en operaciones de estadística apoyada en herramientas tecnológicas. Informes comerciales. Asesoría. Respaldo. Entre muchas otras cosas, estos sos valores y compromisos a los que orgullosamente me he avocado y hasta hoy alcanzado exitosamente.</h4>
+			<h4>Será mi privilegio poder ser partícipe del progreso de sus proyectos</h4></div>
+		</div>
+	</footer>
+</main>
+ <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Adelante{% endblock %}
+
+{% block content %}
+    <main>
+        <section>
+            <h2>¡Hola, {{usr}}!</h2>
+            <p>Te damos la bienvenida a nuestra página. Nos alegra verte por aquí.</p>
+            <p>Profesión: {{profesion}}</p>
+            <p>Contacto: {{mail}}</p>
+        </section>
+        <section>
+            <form method="POST">
+                <label for="actualizarContacto">Seguís con el mismo contacto?</label>
+                <input type="text" id="actualizarContacto" name="mail" placeholder="Whatsapp, mail, etc">
+                <input type="submit" name="">
+            </form>
+        </section>
+        <section>
+            <h2>Sobre nosotros:</h2>
+            <p>Nuestra historia comenzó hace algunos años con un grupo de amigos apasionados por ayudar a las personas y las empresas a conectarse de una manera más significativa.
+
+Valoramos cada relación que construimos. No se trata solo de negocios, sino de personas. Nos enorgullecemos de ser un equipo amigable y accesible. Estamos aquí para escucharte, aprender de ti y ayudarte a alcanzar tus metas, sin importar cuán grandes o pequeñas sean.
+
+Gracias por ser parte de nuestra comunidad. Esperamos conocerte pronto y ayudarte a tejer una red de conexiones que hagan tu vida más rica y exitosa.</p>
+        </section>
+    </main>
+    
+    <section>
+        <h2>Ahora relajate y escucha música</h2>
+        <iframe src="https://www.youtube.com/embed/khWXFNLbPOs" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section>
+        <h3 style="cursor: pointer;color: darkred;" onclick="window.location.href='/logout'">Cerrar sesión</h3>
+    </section>
+{% endblock %}

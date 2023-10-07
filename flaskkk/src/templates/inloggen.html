@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Contactá{% endblock %}
+
+{% block content%}
+    <div class="container">
+        <form method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nm" maxlength="100" required>
+
+            <label for="descripcion">Descripción (máximo 100 caracteres):</label>
+            <textarea id="descripcion" name="profesion" maxlength="100" required></textarea>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+{% endblock %}
